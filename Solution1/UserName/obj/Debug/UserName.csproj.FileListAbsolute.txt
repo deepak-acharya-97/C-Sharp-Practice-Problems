@@ -1,0 +1,6 @@
+c:\users\admin\source\repos\Solution1\UserName\bin\Debug\UserName.dll
+c:\users\admin\source\repos\Solution1\UserName\bin\Debug\UserName.pdb
+c:\users\admin\source\repos\Solution1\UserName\obj\Debug\UserName.csprojAssemblyReference.cache
+c:\users\admin\source\repos\Solution1\UserName\obj\Debug\UserName.csproj.CoreCompileInputs.cache
+c:\users\admin\source\repos\Solution1\UserName\obj\Debug\UserName.dll
+c:\users\admin\source\repos\Solution1\UserName\obj\Debug\UserName.pdb

@@ -1,0 +1,9 @@
+C:\Users\Admin\source\repos\MyInfo\MyInfo\bin\Debug\netstandard2.0\MyInfo.deps.json
+C:\Users\Admin\source\repos\MyInfo\MyInfo\bin\Debug\netstandard2.0\MyInfo.dll
+C:\Users\Admin\source\repos\MyInfo\MyInfo\bin\Debug\netstandard2.0\MyInfo.pdb
+C:\Users\Admin\source\repos\MyInfo\MyInfo\obj\Debug\netstandard2.0\MyInfo.csprojAssemblyReference.cache
+C:\Users\Admin\source\repos\MyInfo\MyInfo\obj\Debug\netstandard2.0\MyInfo.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\MyInfo\MyInfo\obj\Debug\netstandard2.0\MyInfo.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\MyInfo\MyInfo\obj\Debug\netstandard2.0\MyInfo.AssemblyInfo.cs
+C:\Users\Admin\source\repos\MyInfo\MyInfo\obj\Debug\netstandard2.0\MyInfo.dll
+C:\Users\Admin\source\repos\MyInfo\MyInfo\obj\Debug\netstandard2.0\MyInfo.pdb

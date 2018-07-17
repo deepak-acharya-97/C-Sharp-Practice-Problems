@@ -1,0 +1,14 @@
+c:\users\admin\source\repos\Solution1\myInfo\bin\Debug\netcoreapp2.1\myInfo.deps.json
+c:\users\admin\source\repos\Solution1\myInfo\bin\Debug\netcoreapp2.1\myInfo.runtimeconfig.json
+c:\users\admin\source\repos\Solution1\myInfo\bin\Debug\netcoreapp2.1\myInfo.runtimeconfig.dev.json
+c:\users\admin\source\repos\Solution1\myInfo\bin\Debug\netcoreapp2.1\myInfo.dll
+c:\users\admin\source\repos\Solution1\myInfo\bin\Debug\netcoreapp2.1\myInfo.pdb
+c:\users\admin\source\repos\Solution1\myInfo\obj\Debug\netcoreapp2.1\myInfo.csprojAssemblyReference.cache
+c:\users\admin\source\repos\Solution1\myInfo\obj\Debug\netcoreapp2.1\myInfo.csproj.CoreCompileInputs.cache
+c:\users\admin\source\repos\Solution1\myInfo\obj\Debug\netcoreapp2.1\myInfo.AssemblyInfoInputs.cache
+c:\users\admin\source\repos\Solution1\myInfo\obj\Debug\netcoreapp2.1\myInfo.AssemblyInfo.cs
+c:\users\admin\source\repos\Solution1\myInfo\obj\Debug\netcoreapp2.1\myInfo.dll
+c:\users\admin\source\repos\Solution1\myInfo\obj\Debug\netcoreapp2.1\myInfo.pdb
+c:\users\admin\source\repos\Solution1\myInfo\bin\Debug\netcoreapp2.1\UserName.dll
+c:\users\admin\source\repos\Solution1\myInfo\bin\Debug\netcoreapp2.1\UserName.pdb
+c:\users\admin\source\repos\Solution1\myInfo\obj\Debug\netcoreapp2.1\myInfo.csproj.CopyComplete
