@@ -23,18 +23,20 @@ namespace InterfaceExample
     }
     class Cgpa : CgpaCalulator
     {
-        double CgpaCalulator.getCGPA(int []arr)
+        public double getCGPA(int []arr)
         {
-            int sums = 0;
+            float sums = 0;
             for(int i=0; i<arr.Length; i++)
             {
                 sums += arr[i];
             }
             Console.WriteLine(sums);
-            return sums / arr.Length;
+            double cgpa = (sums) / arr.Length;
+            Console.WriteLine(arr.Length);
+            return cgpa;
         }
 
-        string CgpaCalulator.GetPointerCutOffs(string SubjectCode)
+        public string GetPointerCutOffs(string SubjectCode)
         {
             Dictionary<int, int> CutOff = new Dictionary<int, int>();
             CutOff.Add(10, 89);

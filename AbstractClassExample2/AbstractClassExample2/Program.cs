@@ -10,7 +10,7 @@ namespace AbstractClassExample2
     {
         static void Main(string[] args)
         {
-            BaseEmployee FTEEmployee = new FullTimeEmployee() {EmployeeId="3062570", EmployeeName="Tilak", EmployeeAddress="#1-46/3 Near Jomlu WaterFalls Road, Hebri, Karnataka,India" };
+            BaseEmployee FTEEmployee = new FullTimeEmployee() {EmployeeId="3062990", EmployeeName="Tilak", EmployeeAddress="#1-46/3 Near Jomlu WaterFalls Road, Hebri, Karnataka,India" };
             Console.WriteLine(FTEEmployee.CalculateSalary(500));
             Console.ReadLine();
         }

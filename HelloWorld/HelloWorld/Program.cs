@@ -24,8 +24,11 @@ namespace HelloWorld
             /*char[] charArray = new char[] { "A", "B", "C" };
             Console.WriteLine(String.Concat(charArray));
             Console.ReadLine();*/
-            string MyString = "deepak";
-            Console.WriteLine(MyString.Remove(0, 2));
+            //string MyString = "deepak";
+            //Console.WriteLine(MyString.Remove(0, 2));
+            string NumberInTheFormOfString = "3";
+            Console.WriteLine(int.Parse(NumberInTheFormOfString).GetType());
+            Console.ReadLine();
         }
     }
 }

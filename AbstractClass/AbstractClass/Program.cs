@@ -14,14 +14,23 @@ namespace AbstractClass
             Console.WriteLine(rect.getArea());
             ShapeClass square = new Square(4);
             Console.WriteLine(square.getArea());
+            rect.GetVolume();
             Console.ReadLine();
         }
     }
     abstract class ShapeClass
     {
+        public ShapeClass()
+        {
+            Console.WriteLine("Calling Base Class");
+        }
         abstract public double getArea();
+        public virtual void GetVolume()
+        {
+            Console.Write("Printing From Base Class");
+        }
     }
-    class Rectangle : ShapeClass
+    abstract class Rectangle : ShapeClass
     {
         public int Length { get; set; }
         public int Breadth { get; set; }
@@ -31,9 +40,14 @@ namespace AbstractClass
             Length = length;
             Breadth = breadth;
         }
-        public override double getArea()
+        //public override double getArea()
+        //{
+        //    return Length * Breadth;
+        //}
+        public override void GetVolume()
         {
-            return Length * Breadth;
+            Console.WriteLine("Calling From Derived Class");
+            base.GetVolume();
         }
     }
     class Square : ShapeClass
