@@ -8,34 +8,28 @@ using Newtonsoft.Json.Linq;
 
 namespace GDP
 {
+    class GDPPopulation
+    {
+        public float GDP_2012 { get; set; }
+        public float POPULATION_2012 { get; set; }
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
             List<string> FileContents = File.ReadLines(@"D:\C Sharp Assignments\aggregate-gdp-population-csharp-problem-deepakacharyahebri\AggregateGDPPopulation\data\datafile.csv").ToList();
-            StreamReader r = new StreamReader(@"C:\Users\Admin\Downloads\country-continent-map.json");
-            var json = r.ReadToEnd();
-            var jobj = JObject.Parse(json);
+            StreamReader JSONFileContents = new StreamReader(@"C:\Users\Admin\Downloads\country-continent-map.json");
+            var json = JSONFileContents.ReadToEnd();
+            var CountryContinentMap = JObject.Parse(json);
             /* https://social.msdn.microsoft.com/Forums/en-US/525ff8f2-13f5-4602-bce3-78b909cadedb/how-to-read-and-write-a-json-file-in-c?forum=csharpgeneral 
              * https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JObject.htm 
              * */
-            //Console.WriteLine(FileContents[0]);
-            //List<string> FileContentsUpdated = FileContents.Select(i => i.Trim('\"')).ToList();
             string headerText = FileContents[0];
             List<string> headers = headerText.Split(',').ToList();
-            foreach (string item in headers)
-            {
-                Console.WriteLine(item);
-            }
             int IndexOfCountry = headers.IndexOf("\"Country Name\"");
             int IndexOfPopulation = headers.IndexOf("\"Population (Millions) 2012\"");
             int IndexOfGDP = headers.IndexOf("\"GDP Billions (USD) 2012\"");
-            Console.WriteLine(IndexOfCountry);
-            Console.WriteLine(IndexOfPopulation);
-            Console.WriteLine(IndexOfGDP);
-            //Console.WriteLine(headers.ToString());
-            Dictionary<string, float []> JSONObject = new Dictionary<string, float []>();
+            Dictionary<string, GDPPopulation> JSONObject = new Dictionary<string, GDPPopulation>();
             for (int i = 1; i < FileContents.Count; i++)
             {
                 List<string> RowOfData = FileContents[i].Split(',').ToList();
@@ -44,29 +38,22 @@ namespace GDP
                 float Gdp = float.Parse(RowOfData[IndexOfGDP].Trim('\"'));
                 try
                 {
-                    string Continent = jobj.GetValue(RowOfData[IndexOfCountry].Trim('\"')).ToString();
+                    string Continent = CountryContinentMap.GetValue(RowOfData[IndexOfCountry].Trim('\"')).ToString();
                     try
                     {
-                        JSONObject[Continent][0] += Gdp;
-                        JSONObject[Continent][1] += Population;
+                        JSONObject[Continent].GDP_2012 += Gdp;
+                        JSONObject[Continent].POPULATION_2012 += Population;
                     }
-                    catch(Exception e)
+                    catch (Exception e)
                     {
-                        float[] info = new float[2];
-                        info[0] = Gdp;
-                        info[1] = Population;
-                        JSONObject.Add(Continent, info);
+                        GDPPopulation g = new GDPPopulation() { GDP_2012 = Gdp, POPULATION_2012 = Population };
+                        JSONObject.Add(Continent, g);
                     }
                 }
-                catch (Exception e)
-                {
-                    //Console.WriteLine(Country);
-                }
+                catch (Exception e) { }
             }
-            foreach (KeyValuePair<string, float[]> item in JSONObject)
-            {
-                Console.WriteLine(item.Key + " GDP = " + item.Value[0] + " Population = " + item.Value[1]);
-            }
+            var JSONOutput=Newtonsoft.Json.JsonConvert.SerializeObject(JSONObject);
+            File.WriteAllText(@"D:/output.json", JSONOutput);
             Console.ReadKey();
         }
     }
