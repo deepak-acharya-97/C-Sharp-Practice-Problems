@@ -30,7 +30,8 @@ namespace EmptyWebApplication
             app.Run(async (context) =>
             {
                 //throw new Exception("It's Broken!!");
-                await context.Response.WriteAsync("Hello World!");
+                var Message = ClassLibrary1.Class1.Greeting();
+                await context.Response.WriteAsync($"{Message}");
             });
         }
     }
