@@ -1,0 +1,275 @@
+.separator {
+    margin-top: 10px;
+}
+
+#features {
+    text-align: center;
+    margin: 0 0 20px;
+}
+#reduce-image-size {
+    width: 80px;
+    height: 60px;
+}
+.color-change {
+    color: darkblue;
+}
+body {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+.well .page-header {
+    margin-top: 0;
+}
+.well .page-header h1 {
+    margin-top: 0;
+}
+.tabbable img.thumbnail {
+    margin :0 20px 10px 0;
+}
+#searchInput {
+    width: 200px; 
+}
+.navbar-brand {
+     padding: 13px 15px;
+}
+#align-proper {
+    margin-top: 20px;
+}
+.nav-color {
+    background-color: #212529;
+    color: rgb(223, 35, 82);
+}
+#mycarousel {
+    margin-top: 60px;
+}
+.carousel-caption {
+    font-size: 24px;
+}
+.carousel-caption h4 {
+    font-size: 32px;
+}
+#mycarousel .item {
+    height: 400px;
+}
+#slide1 {
+    background: url('../../images/vision.jpg') top center no-repeat;
+    background-size: 100%;
+}
+#slide2 {
+    background: url('../../images/mission.jpg') top center no-repeat;
+    background-size: 100% 100%;
+}
+#slide3 {
+    background: url('../../images/objectives.png') top center no-repeat;
+    background-size: 100% 100%;
+}
+.pull-center {
+    text-align: center;
+}
+.fix-image-size {
+    width: 60%;
+    height: 200px;
+    margin-left:15%;
+}
+.text-justify {
+    margin-top: 20px;
+    text-align: justify;
+}
+.align-to-margin {
+    margin-bottom: 0px;
+}
+#features {
+    display: flex;
+    align-items: stretch;
+}
+#features article {
+    flex: 1;
+}
+.color-header {
+    background-color: lightgoldenrodyellow;
+}
+.organise {
+    border: 1px solid darkgrey;
+}
+.reduce-tab-size {
+    height: 300px;
+    width: 300px;
+}
+.small-padding {
+    padding: 10px;
+}
+.remove-list-style {
+    list-style-type: none;
+}
+#contact {
+    font-size: 20px;
+}
+footer {
+    background-color: rgb(104, 104, 151);
+    color: antiquewhite;
+}
+.bg-color-1 {
+    background-color: azure;
+    margin-top: 10px;
+}
+.border1 {
+    padding: 3px;
+    border: 1px solid blanchedalmond;
+}
+.adjust-image-size {
+    height: 300px;
+    width: 300px;
+}
+.right-margin {
+    padding-left: 5%;
+    padding-top: 5%;
+}
+.align-center {
+    text-align: center;
+}
+.adjust-team-image {
+    width: 200px;
+    height: 200px;
+}
+.small-image {
+    height: 40px;
+    width: 40px;
+}
+.img-padding {
+    padding-top: 7px;
+}
+.fix-img-size {
+    width: 70%;
+    height: 400px;
+}
+footer .row {
+    width: 100%;
+}
+.margin-width {
+    padding: 30px;
+}
+.to-uppercase {
+    text-transform: uppercase;
+}
+.fix-img1-size {
+    width: 40%;
+    height: 200px;
+    padding: 5px;
+}
+.fix-height {
+    height: 330px;
+}
+.footer-img {
+    height: 20px;
+    width: 20px;
+}
+.separate {
+    margin-top: 10px;
+}
+.vertical-center {
+    vertical-align: center;
+}
+/* Portrait & landscape phone */
+@media (max-width: 480px) {
+    .fix-image-size {
+        width: 40%;
+        height: 100px;
+        margin-left: 10%;
+    }
+    #contact {
+        font-size: 14px;
+    }
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 768px) {
+    .adjust-height {
+        height: 470px;
+    }
+    .fix-img-size {
+        height: 200px;
+    }
+    .reduce-tab-size {
+        height: 200px;
+        width: 200px
+    }
+    .font-reduce {
+        font-size: 12px;
+    }
+    .adjust-image-size {
+        height: 200px;
+        width: 200px;
+    }
+    #mycarousel .item {
+        height: 310px;
+    }
+    #slide1 {
+        background: url('../../images/vision.jpg') top center no-repeat;
+    }
+    #slide2 {
+        background: url('../../images/mission.jpg') top center no-repeat;
+    }
+    #slide3 {
+        background: url('../../images/objectives.png') top center no-repeat;
+    }
+    .carousel-caption {
+        font-size: 16px;
+    }
+    .carousel-caption h4 {
+        font-size: 22px;
+    }
+	#slide1,
+    #slide2,
+    #slide3 {
+        background-size: 100% 100%;
+    }
+    .fix-image-size {
+        width: 60%;
+        height: 150px;
+        margin-left: 25%;
+    }
+    #contact {
+        font-size: 12px;
+    }
+    .reduce-text {
+        font-size: 12px;
+    }
+    .fix-height {
+        height: auto;
+    }
+}
+@media (min-width: 992px) {
+    .adjust-height {
+        height: 600px;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+    .adjust-height {
+        height: 550px;
+    }
+    #mycarousel .item {
+        height: 500px;
+    }
+    #slide1 {
+        background: url('../../images/vision.jpg') top center no-repeat;
+    }
+    #slide2 {
+        background: url('../../images/mission.jpg') top center no-repeat;
+    }
+    #slide3 {
+        background: url('../../images/objectives.png') top center no-repeat;
+    }
+    #slide1,
+    #slide2,
+    #slide3 {
+        background-size: 100% 100%;
+    }
+    .fix-image-size {
+        width: 60%;
+    }
+    #contact {
+        font-size: 17px;
+    }
+
+}
