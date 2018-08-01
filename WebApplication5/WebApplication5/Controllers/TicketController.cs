@@ -9,7 +9,7 @@ namespace WebApplication5.Controllers
 {
     public class TicketController : Controller
     {
-        [HttpGet("/tckt")]
+        //[HttpGet("/tckt")]
         public IActionResult Index()
         {
             //get some stuff from db

@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    var ListOfItems = ViewBag.Data;
+}
+
+<!--<h2>Index</h2>-->
+<table border="5" cellpadding="12px" cellspacing="12px" style="margin-left:auto;margin-right:auto;">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>PlainText</th>
+            <th>CheckList</th>
+            <th>Labels</th>
+            <th>PinStatus</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (int i = 0; i < ListOfItems.Count; i++)
+        {
+        <tr>
+            <td>@ListOfItems[i].Title</td>
+            <td>@ListOfItems[i].PlainText</td>
+            <td>@ListOfItems[i].CheckList</td>
+            <td>@ListOfItems[i].Labels</td>
+            <td>@ListOfItems[i].PinStatus</td>
+        </tr>
+        }
+    </tbody>
+</table>
