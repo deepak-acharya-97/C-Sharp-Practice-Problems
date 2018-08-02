@@ -14,6 +14,8 @@ namespace GoogleKeepAssignment.Models
         }
 
         public DbSet<GoogleKeepAssignment.Models.Note> Note { get; set; }
+        public DbSet<GoogleKeepAssignment.Models.Label> Label { get; set; }
+        public DbSet<GoogleKeepAssignment.Models.CheckList> CheckList { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
