@@ -36,7 +36,7 @@ namespace ToDoAssignmentSimple.Controllers
                 return BadRequest(ModelState);
             }
 
-            var note = await _context.Note.FindAsync(id);
+            var note = await _context.Note.Include(s => s.Labels).Include(y => y.CheckLists).SingleOrDefaultAsync(x => x.Id ==id);
 
             if (note == null)
             {
@@ -46,18 +46,27 @@ namespace ToDoAssignmentSimple.Controllers
             return Ok(note);
         }
 
+        [HttpGet("search/{title}")]
+        public IEnumerable<Note> SearchByTiitel([FromRoute] string title)
+        {
+            var x =  _context.Note.Include(s => s.Labels).Include(s => s.CheckLists).Where(s => s.Title.Contains(title));
+            return x;
+        }
+
         //searching by ID
         [HttpGet("title")]
-        public IEnumerable<Note> SearchById([FromQuery] string title)
+        public IEnumerable<Note> SearchByTitle([FromQuery] string title)
         {
             return _context.Note.Include(s => s.Labels).Include(s => s.CheckLists).Where(s=>s.Title==title);
         }
 
         [HttpGet("label")]
-        public IEnumerable<Note> SearchByLabel([FromQuery] string label)
+        public IActionResult SearchByLabel([FromQuery] string label)
         {
             //throw new Exception("Not Implemented");
-            return _context.Note.Include(s => s.CheckLists).Include(s => s.Labels.Any(labels=>labels.LabelData==label));
+            var NonNullDatas =  _context.Note.Include(s => s.CheckLists).Include(s => s.Labels).Where(x=>x.Labels != null);
+            return Ok(NonNullDatas.Where(x => x.Labels.Any(y => y.LabelData == label)));
+
         }
         [HttpGet("pinned")]
         public IEnumerable<Note> PinnedNotes()
@@ -124,7 +133,29 @@ namespace ToDoAssignmentSimple.Controllers
                 return BadRequest(ModelState);
             }
 
-            var note = await _context.Note.FindAsync(id);
+            //var note = await _context.Note.FindAsync(id);
+            var note = await _context.Note.Include(s => s.Labels).Include(s => s.CheckLists).SingleOrDefaultAsync(s => s.Id == id);
+            if (note == null)
+            {
+                return NotFound();
+            }
+
+            _context.Note.Remove(note);
+            await _context.SaveChangesAsync();
+
+            return Ok(note);
+        }
+
+        [HttpDelete("deletetitle")]
+        public async Task<IActionResult> DeleteNoteByTitle([FromQuery] string title)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            //var note = await _context.Note.FindAsync(id);
+            var note = await _context.Note.Include(s => s.Labels).Include(s => s.CheckLists).SingleOrDefaultAsync(s => s.Title == title);
             if (note == null)
             {
                 return NotFound();
