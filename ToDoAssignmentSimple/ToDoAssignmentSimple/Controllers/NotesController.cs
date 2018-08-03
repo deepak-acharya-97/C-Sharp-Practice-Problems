@@ -60,8 +60,8 @@ namespace ToDoAssignmentSimple.Controllers
             return _context.Note.Include(s => s.Labels).Include(s => s.CheckLists).Where(s=>s.Title==title);
         }
 
-        [HttpGet("label")]
-        public IActionResult SearchByLabel([FromQuery] string label)
+        [HttpGet("label/{label}")]
+        public IActionResult SearchByLabel([FromRoute] string label)
         {
             //throw new Exception("Not Implemented");
             var NonNullDatas =  _context.Note.Include(s => s.CheckLists).Include(s => s.Labels).Where(x=>x.Labels != null);
@@ -87,7 +87,7 @@ namespace ToDoAssignmentSimple.Controllers
             {
                 return BadRequest();
             }
-
+            //var Notes = _context.Note.Include(s => s.Labels).Include(y => y.CheckLists);
             _context.Entry(note).State = EntityState.Modified;
 
             try
@@ -146,25 +146,22 @@ namespace ToDoAssignmentSimple.Controllers
             return Ok(note);
         }
 
-        [HttpDelete("deletetitle")]
-        public async Task<IActionResult> DeleteNoteByTitle([FromQuery] string title)
+        [HttpDelete("deletelabel/{Label}")]
+        public async Task<IActionResult> DeleteNoteByLabel([FromRoute] string Label)
         {
-            if (!ModelState.IsValid)
+            /*if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
-            }
+            }*/
 
             //var note = await _context.Note.FindAsync(id);
-            var note = await _context.Note.Include(s => s.Labels).Include(s => s.CheckLists).SingleOrDefaultAsync(s => s.Title == title);
-            if (note == null)
-            {
-                return NotFound();
-            }
+            var NonNullDatas = _context.Note.Include(s => s.CheckLists).Include(s => s.Labels).Where(x => x.Labels != null);
+            var Notes = NonNullDatas.Where(x => x.Labels.Any(v => v.LabelData == Label));
+            _context.Note.RemoveRange(Notes);
 
-            _context.Note.Remove(note);
             await _context.SaveChangesAsync();
 
-            return Ok(note);
+            return Ok(Notes);
         }
 
         private bool NoteExists(int id)
